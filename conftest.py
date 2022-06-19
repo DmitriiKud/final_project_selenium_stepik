@@ -36,12 +36,3 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
-
-#def browser():
-#    print("\nstart browser for test..")
-#    browser = webdriver.Chrome()
-#    #ожидание до 5 секунд, пока искомый элемент не появится
-#    browser.implicitly_wait(5)
-#    yield browser
-#    print("\nquit browser..")
-#    browser.quit()
