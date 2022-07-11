@@ -12,8 +12,8 @@ class ProductPage(BasePage):
         page.open() # открываем страницу
         basket = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET) # находим кнопку добавить в корзину
         basket.click()
-        #time.sleep(2)
-        BasePage.solve_quiz_and_get_code(self)
+        #time.sleep(1)
+        #BasePage.solve_quiz_and_get_code(self)
     
     # метод для сравнения имен книги желаемой и в корзине
     def should_be_proper_bookname(self):
@@ -22,7 +22,7 @@ class ProductPage(BasePage):
         wanted_bookname = self.browser.find_element(*ProductPageLocators.BOOKNAME)
         assert bookname.text == wanted_bookname.text, "Wrong book added"
         print(f"{wanted_bookname.text} in the basket")
-        #time.sleep(1)
+        time.sleep(1)
     
     # метод для сравнения стоимости желаемой книги и стоимости корзины
     def should_be_correct_price_in_basket(self):
@@ -30,7 +30,7 @@ class ProductPage(BasePage):
         price_in_basket = self.browser.find_element(*ProductPageLocators.BASKET_PRICE)
         assert price.text == price_in_basket.text, "Price incorrect in the basket"
         print(f"Price {price_in_basket.text} is correct")
-        #time.sleep(1)
+        time.sleep(1)
     
     # использование метода из base_page
     def should_not_be_success_message(self):
